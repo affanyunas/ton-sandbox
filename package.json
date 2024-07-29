@@ -24,8 +24,11 @@
   "scripts": {
     "test": "yarn jest",
     "compile": "ts-node ./scripts/compile.ts",
-    "deploy": "yarn compile && ts-node ./scripts/deploy.ts",
-    "testnet": "ts-node ./scripts/onchaintest.ts"
+    "deploy": "yarn compile && set TESTNET=true && ts-node ./scripts/deploy.ts",
+    "deploy:mainnet": "yarn compile && ts-node ./scripts/deploy.ts",
+    "onchaintest": "set TESTNET=true && ts-node ./scripts/onchaintest.ts",
+    "onchaintest:mainnet": "ts-node ./scripts/onchaintest.ts"
+    
   },
   "dependencies": {
     "@orbs-network/ton-access": "^2.3.3"
